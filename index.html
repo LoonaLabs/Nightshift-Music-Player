@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0d13">
+
+<title>Nightshift — Modern Music Player</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="app-shell">
+
+<aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <span class="brand-mark">✦</span>
+        <span>nightshift</span>
+      </div>
+
+<nav class="navigation">
+        <p class="nav-label">Menu</p>
+
+<button class="nav-item active" data-page="home">
+          <span>⌂</span>
+          Home
+        </button>
+
+<button class="nav-item" data-page="discover">
+          <span>◈</span>
+          Discover
+        </button>
+
+<button class="nav-item" data-page="liked">
+          <span>♡</span>
+          Liked Songs
+          <b id="likedCount">0</b>
+        </button>
+
+<button class="nav-item" data-page="recent">
+          <span>◷</span>
+          Recently Played
+        </button>
+      </nav>
+
+<nav class="navigation">
+        <p class="nav-label">Genres</p>
+
+<button class="nav-item" data-genre="all">
+          <span>♪</span>
+          All Music
+        </button>
+
+<button class="nav-item" data-genre="metal">
+          <span>⚡</span>
+          Metal
+        </button>
+
+<button class="nav-item" data-genre="rap-marocain">
+          <span>✦</span>
+          Rap Marocain
+        </button>
+
+<button class="nav-item" data-genre="rai">
+          <span>♫</span>
+          Raï
+        </button>
+
+<button class="nav-item" data-genre="electronic">
+          <span>◉</span>
+          Electronic
+        </button>
+
+<button class="nav-item" data-genre="blues">
+          <span>♬</span>
+          Blues
+        </button>
+
+<button class="nav-item" data-genre="orchestral">
+          <span>♜</span>
+          Orchestral
+        </button>
+      </nav>
+
+<button class="theme-button" id="themeButton">
+        ☾ Switch theme
+      </button>
+    </aside>
+
+<main class="main-content">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu">☰</button>
+
+<div class="search-box">
+          <span>⌕</span>
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Search songs, genres..."
+          >
+        </div>
+
+<div class="profile">
+          <span class="avatar">NS</span>
+          <span>Nightshift</span>
+        </div>
+      </header>
+
+<section id="pageView"></section>
+    </main>
+
+<section class="player-bar">
+      <div class="now-playing">
+        <img id="playerCover" src="" alt="Current song cover">
+
+<div class="current-info">
+          <strong id="playerTitle">Choose a song</strong>
+          <span id="playerArtist">Nightshift Radio</span>
+        </div>
+
+<button id="playerLike" class="icon-control" aria-label="Like song">
+          ♡
+        </button>
+      </div>
+
+<div class="player-center">
+        <div class="player-controls">
+          <button id="shuffleButton" class="icon-control" title="Shuffle">⤨</button>
+          <button id="previousButton" class="icon-control" title="Previous">◀</button>
+
+<button id="playButton" class="play-button" title="Play">
+            ▶
+          </button>
+
+<button id="nextButton" class="icon-control" title="Next">▶</button>
+          <button id="repeatButton" class="icon-control" title="Repeat">↻</button>
+        </div>
+
+<div class="progress-line">
+          <span id="currentTime">0:00</span>
+          <input id="progressBar" type="range" min="0" max="100" value="0">
+          <span id="duration">0:00</span>
+        </div>
+      </div>
+
+<div class="volume-control">
+        <span>◒</span>
+        <input id="volumeBar" type="range" min="0" max="1" step="0.01" value="0.8">
+      </div>
+
+<audio id="audioPlayer" preload="metadata"></audio>
+    </section>
+  </div>
+
+<div id="toast" class="toast"></div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
